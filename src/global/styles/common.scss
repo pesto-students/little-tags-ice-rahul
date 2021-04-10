@@ -2,7 +2,35 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Gotham';
+  src: url('../assets/fonts/GothamMedium.ttf');
+}
+
+@font-face {
+  font-family: 'GothamBook';
+  src: url('../assets/fonts/GothamBook.ttf');
+}
+
+@font-face {
+  font-family: 'Hero';
+  src: url('../assets/fonts/Hero.otf');
+}
+
+@font-face {
+  font-family: 'HeroLight';
+  src: url('../assets/fonts/HeroLight.otf');
+}
+
 body {
   margin: 0;
-  font-family: 'roboto', sans-serif;
+  font-family: 'Hero', 'roboto', sans-serif;
+}
+
+.position-absolute{
+  position: absolute;
+}
+
+.position-relative{
+  position: relative;
 }
