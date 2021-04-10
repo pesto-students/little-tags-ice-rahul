@@ -1,6 +1,6 @@
 import React from 'react';
 import { ReactComponent as SearchIcon } from '../../global/assets/icons/icon-search.svg';
-import './search.scss';
+import './Search.scss';
 
 const Search = () => {
   return (

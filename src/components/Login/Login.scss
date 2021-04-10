@@ -1,0 +1,36 @@
+$root: ".Login";
+
+#{$root} {
+  padding: 6px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-left: 10px;
+
+  &:hover {
+    filter: drop-shadow(2px 4px 6px #ccc);
+  }
+
+  .loginText {
+    display: block;
+  }
+
+  .loginIcon{
+    display: none;
+    width: 24px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .loginText {
+      display: none;
+    }
+
+    .loginIcon{
+      display: block;
+    }
+    
+  }
+}

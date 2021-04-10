@@ -1,43 +1,34 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 import { ReactComponent as MenuIcon } from '../../global/assets/icons/hamburger.svg';
-import { ReactComponent as LoginIcon } from '../../global/assets/icons/icon-login.svg';
-import Search from '../search';
+import { HEADER } from '../../constants';
+import Search from '../Search';
+import Login from '../Login';
+import User from '../User';
+import './Header.scss';
 
-import './header.scss';
+const Header = ({ type, isLoggedIn = false, bgColor = HEADER.BACKGROUND.WHITE }) => {
 
-const Header = ({ type, isLoggedIn = false }) => {
-  
-  const Login = () => {
-    return (
-      <div className="isLogin">
-        <span className="loginText">
-          Log in / Sign up
-        </span>
-        <LoginIcon  className="loginIcon"/>
-      </div>
-    )
-  }
-
-  const User = () => {
-    return (
-      <div className="isLogin">
-        User
-      </div>
-    )
-  }
-
-  const isLogin = isLoggedIn ? User() : Login();
   var headerType = classNames({
     'Header': true,
-    'position-absolute': type === 'floating',
-    'position-relative': type === 'fixed'
+    'position-absolute': type === HEADER.TYPE.FLOATING,
+    'position-relative': type === HEADER.TYPE.FIXED
   });
+  const header = useRef(null);
+  const [textColor, setTextColor] = useState('black')
+  const isLogin = isLoggedIn ? <User fill={textColor} /> : <Login fill={textColor} />;
+
+  useEffect(() => {
+    const computed = window.getComputedStyle(header.current).getPropertyValue("background-color");
+    if(computed !== 'rgb(255, 255, 255)') {
+      setTextColor('white');
+    }
+  },[header])
 
   return (
-    <header className={headerType}>
+    <header ref={header} className={headerType} style={{ backgroundColor:bgColor, color:textColor }}>
       <div className="logo">
-        <MenuIcon fill="black" stroke="black" className="menuIcon"/>
+        <MenuIcon fill={textColor} stroke={textColor} className="menuIcon"/>
         <span className="title">Little Tag</span>
       </div>  
       <div className="search">
