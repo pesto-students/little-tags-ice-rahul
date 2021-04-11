@@ -16,3 +16,8 @@ export const IMAGE_CONTAINER = {
     TERTIARY : 'tertiary'
   }
 }
+
+export const DRAWER = {
+  OPEN : 'open',
+  CLOSE : 'close'
+}

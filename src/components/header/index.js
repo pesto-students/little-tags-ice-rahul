@@ -5,6 +5,7 @@ import { HEADER } from '../../constants';
 import Search from '../Search';
 import Login from '../Login';
 import User from '../User';
+import SideBar from '../SideBar';
 import './Header.scss';
 
 const Header = ({ type, isLoggedIn = false, bgColor = HEADER.BACKGROUND.WHITE }) => {
@@ -15,9 +16,9 @@ const Header = ({ type, isLoggedIn = false, bgColor = HEADER.BACKGROUND.WHITE })
     'position-relative': type === HEADER.TYPE.FIXED
   });
   const header = useRef(null);
+  const [drawerState, setDrawerState] = useState(false);
   const [textColor, setTextColor] = useState('black')
   const isLogin = isLoggedIn ? <User fill={textColor} /> : <Login fill={textColor} />;
-
   useEffect(() => {
     const computed = window.getComputedStyle(header.current).getPropertyValue("background-color");
     if(computed !== 'rgb(255, 255, 255)') {
@@ -27,8 +28,9 @@ const Header = ({ type, isLoggedIn = false, bgColor = HEADER.BACKGROUND.WHITE })
 
   return (
     <header ref={header} className={headerType} style={{ backgroundColor:bgColor, color:textColor }}>
+      <SideBar openDrawer={drawerState} currentState={(state) => setDrawerState(state)}/>
       <div className="logo">
-        <MenuIcon fill={textColor} stroke={textColor} className="menuIcon"/>
+        <MenuIcon fill={textColor} stroke={textColor} className="menuIcon" onClick={() => setDrawerState(true)}/>
         <span className="title">Little Tag</span>
       </div>  
       <div className="search">
