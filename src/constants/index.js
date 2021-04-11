@@ -8,3 +8,11 @@ export const HEADER = {
     TRANSPARENT: 'transparent'
   }
 }
+
+export const IMAGE_CONTAINER = {
+  TYPE : {
+    PRIMARY : 'primary',
+    SECONDARY : 'secondary',
+    TERTIARY : 'tertiary'
+  }
+}

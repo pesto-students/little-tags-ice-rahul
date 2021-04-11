@@ -1,0 +1,37 @@
+$root: '.ImageContainer';
+
+#{$root}{
+  min-height: 100px;
+  border:1px solid #ccc;
+  border-radius: 15px;
+  display: inline-block;
+  margin: 10px;
+  position: relative;
+  background-color: green;
+
+  .imageContainerTitle{
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    padding: 15px;
+    width: 100%;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    text-align: left;
+  }
+}
+
+.img-primary{
+  width:92%;
+  height: 260px;
+}
+
+.img-secondary{
+  width:44%;
+  height: 550px;
+}
+
+.img-tertiary{
+  width:50%;
+}
