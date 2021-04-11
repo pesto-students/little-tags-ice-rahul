@@ -16,6 +16,14 @@ $root: '.SideBar';
   border-top-right-radius: 10px;
   transition: 1s;
   color: black;
+  z-index: 1;
+
+  .cross-icon{
+    transition: 0.5s;
+    &:hover{
+      filter: drop-shadow(0 0 12px black);
+    }
+  }
 
   .titleBar{
     padding: 20px 25px;

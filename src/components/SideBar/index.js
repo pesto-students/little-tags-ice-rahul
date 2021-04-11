@@ -23,7 +23,7 @@ const SideBar = ({ openDrawer = false, currentState }) => {
   return (
     <div className="SideBar" ref={sideBar}>
       <div className="titleBar">
-        <span className="cursor-pointer" onClick={() => toggleDrawer(DRAWER.CLOSE)}>
+        <span className="cursor-pointer cross-icon" onClick={() => toggleDrawer(DRAWER.CLOSE)}>
           <CrossIcon width="24px"/>
         </span>
         <span className="sideBarTitle cursor-pointer">

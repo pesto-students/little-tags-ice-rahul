@@ -24,7 +24,15 @@ $root: '.Header';
 
   .menuIcon {
     height: 24px;
+    width: auto;
+    margin: 0 15px;
     cursor: pointer;
+    transition: 0.5s;
+
+    &:hover{
+      filter: drop-shadow(0px 0px 12px black);
+    }
+
   }
 
   .title{
