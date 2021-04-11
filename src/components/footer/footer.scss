@@ -1,7 +1,94 @@
 $root: '.Footer';
 
 #{$root} {
-  background-color: #74b9ff;
+  background-color: #32353C;
   width: 100%;
-  padding: 10px 15px;
+  padding: 10px 30px;
+
+  .title{
+    color: #F9F9F9;
+    padding: 20px 0;
+  }
+
+  .footerContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 0;
+    font-family: 'Hero';
+    color: #6F6F6F;
+  }
+  .footerPayment{
+    color: #6F6F6F;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    padding-left: 10px;
+  }
+
+  .contactInfo{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 0 10px;
+  }
+
+  .categoryInfo{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    flex-basis: 0;
+    padding: 0 10px;
+  }
+
+  .subscribeInfo{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 0 10px;
+  }
+  .subscribeForm{
+    display: flex;
+  }
+  .subscribeInput{
+    padding: 10px 15px;
+  }
+  .subscribeButton{
+    padding: 10px 15px;
+  }
+
+  hr{
+    border-color: #707070;
+    background: #707070;
+  }
+
+  .footerCopyright{
+    display: flex;
+    justify-content: space-between;
+    color: #FFFFFFB2;
+    font-size: 0.8em;
+  }
+
+  .icon{
+    margin: 0 5px;
+  }
+
+  span{
+    padding: 5px 0;
+  }
+
+  @media only screen and (max-width: 850px) {
+    .categoryInfo{
+      flex-grow: 1;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .footerContent{
+      flex-direction: column;
+    }
+  }
+
 }

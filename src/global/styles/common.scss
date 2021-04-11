@@ -35,6 +35,14 @@ body {
   position: relative;
 }
 
+.display-inline-block{
+  display: inline-block;
+}
+
+.padding-0{
+  padding: 0;
+}
+
 $main: '.Container';
 
 #{$main} {
