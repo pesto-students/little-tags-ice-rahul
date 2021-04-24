@@ -1,0 +1,40 @@
+$root: '.Search';
+
+#{$root} {
+  padding: 5px 15px;
+  min-width: 75%;
+  outline: 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row-reverse;
+  transition: 0.4s;
+  box-shadow: 0 0 5px 0px #ccc;
+  background-color: white;
+
+  .searchIcon{
+    width: 24px;
+    margin-right: 10px;
+    transition: 0.4s;
+    cursor: pointer;
+  }
+
+  .searchInput{
+    border:0;
+    width: 100%;
+    outline: 0;
+    font-family: 'Hero';
+    font-size: 1em;
+    padding: 5px;
+  }
+
+  &:focus-within{
+    border-color: #74b9ff;
+    box-shadow: 0 0 5px 0px #74b9ff;
+
+    .searchIcon {
+      stroke: #74b9ff;
+    }
+  }
+
+}
