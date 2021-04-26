@@ -10,12 +10,12 @@ const OnDemand = () => {
       <div className="title"> Most in Demand </div>
       <div className="gallery">
         <div className="gallery-left">
-          <ImageContainer type={IMAGE_CONTAINER.TYPE.PRIMARY} />
-          <ImageContainer type={IMAGE_CONTAINER.TYPE.PRIMARY} />
+          <ImageContainer type={IMAGE_CONTAINER.TYPE.PRIMARY} className="margin-10" />
+          <ImageContainer type={IMAGE_CONTAINER.TYPE.PRIMARY} className="margin-10" />
         </div>
         <div className="gallery-right">
-          <ImageContainer type={IMAGE_CONTAINER.TYPE.SECONDARY} />
-          <ImageContainer type={IMAGE_CONTAINER.TYPE.SECONDARY} />
+          <ImageContainer type={IMAGE_CONTAINER.TYPE.SECONDARY} className="margin-10" />
+          <ImageContainer type={IMAGE_CONTAINER.TYPE.SECONDARY} className="margin-10" />
         </div>
       </div>
     </section>

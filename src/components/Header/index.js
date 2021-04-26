@@ -21,11 +21,11 @@ const Header = ({ type, isLoggedIn = false, bgColor = HEADER.BACKGROUND.WHITE })
   const isLogin = isLoggedIn ? <User fill={textColor} /> : <Login fill={textColor} />;
   useEffect(() => {
     const computed = window.getComputedStyle(header.current).getPropertyValue("background-color");
+    setTextColor('black');
     if(computed !== 'rgb(255, 255, 255)') {
       setTextColor('white');
     }
-  },[header])
-
+  },[textColor])
   return (
     <header ref={header} className={headerType} style={{ backgroundColor:bgColor, color:textColor }}>
       <SideBar openDrawer={drawerState} currentState={(state) => setDrawerState(state)}/>
