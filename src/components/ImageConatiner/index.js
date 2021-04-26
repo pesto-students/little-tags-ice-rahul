@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { IMAGE_CONTAINER } from '../../constants';
 import './ImageContainer.scss';
 
-const ImageContainer = ({ type = IMAGE_CONTAINER.TYPE.PRIMARY, title = 'Image', link = '#' }) => {
+const ImageContainer = ({ type = IMAGE_CONTAINER.TYPE.PRIMARY, title = 'Image', link = '#', className }) => {
 
   var ImageContainerConfig = classNames({
     'ImageContainer': true,
@@ -11,10 +11,13 @@ const ImageContainer = ({ type = IMAGE_CONTAINER.TYPE.PRIMARY, title = 'Image', 
     'img-secondary' : type === IMAGE_CONTAINER.TYPE.SECONDARY,
     'img-tertiary' : type === IMAGE_CONTAINER.TYPE.TERTIARY
   });
-
   return (
-    <div className={ImageContainerConfig}>
-      <div className="imageContainerTitle">{title}</div>
+    <div className={`${ImageContainerConfig} ${className ? className : ''}`}>
+      {
+        title !== '' ?
+        <div className="imageContainerTitle">{title}</div>
+        : ''
+      }
     </div>
   );
 }

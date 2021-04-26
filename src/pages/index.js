@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from './Home';
+import Product from './Product';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { HEADER } from '../constants';
@@ -12,11 +14,31 @@ const headerProp = {
 }
 
 const App = () => {
+  const [headerConfig, setHeaderConfig] = useState(headerProp)
+  useEffect(()=>{
+    const currentPath = window.location.pathname;
+    if(currentPath !== '/'){
+      setHeaderConfig({
+        ...headerProp,
+        type: HEADER.TYPE.FIXED,
+        bgColor: HEADER.BACKGROUND.WHITE
+      })
+    }
+  }, [])
   return (
     <div className="Container">
-      <Header type={headerProp.type} bgColor={headerProp.bgColor} isLoggedIn={headerProp.isLoggedIn} />
+      <Header type={headerConfig.type} bgColor={headerConfig.bgColor} isLoggedIn={headerConfig.isLoggedIn} />
       <div className="body">
-        <Home />
+        <Router>
+          <Switch>
+            <Route path="/product">
+              <Product />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>          
+        </Router>
       </div>
       <Footer />
     </div>
