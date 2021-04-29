@@ -3,9 +3,9 @@ import Button from '../Button';
 import './ProductDetail.scss';
 
 const ProductDetail = ({product}) => {
-  let { price, name, description, variant, stock, image} = product;
+//  let { price, name, description, variant, stock, image} = product;
 
-  image = [
+  let image = [
     {
       url:'https://www.google.com'
     },
