@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from './Home';
 import Product from './Product';
+import ProductDetail from './ProductDetail';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { HEADER } from '../constants';
@@ -33,6 +34,9 @@ const App = () => {
           <Switch>
             <Route path="/product">
               <Product />
+            </Route>
+            <Route path="/product-detail">
+              <ProductDetail />
             </Route>
             <Route path="/">
               <Home />
