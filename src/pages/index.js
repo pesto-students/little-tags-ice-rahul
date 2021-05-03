@@ -6,6 +6,7 @@ import ProductDetail from './ProductDetail';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { HEADER } from '../constants';
+import withAuthentication from '../components/Session/withAuthentication'
 import '../global/styles/common.scss';
 
 const headerProp = {
@@ -28,25 +29,28 @@ const App = () => {
   }, [])
   return (
     <div className="Container">
-      <Header type={headerConfig.type} bgColor={headerConfig.bgColor} isLoggedIn={headerConfig.isLoggedIn} />
-      <div className="body">
-        <Router>
-          <Switch>
-            <Route path="/product">
-              <Product />
-            </Route>
-            <Route path="/product-detail">
-              <ProductDetail />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>          
-        </Router>
-      </div>
-      <Footer />
+      <Router>
+        <Header type={headerConfig.type} bgColor={headerConfig.bgColor} isLoggedIn={headerConfig.isLoggedIn} />
+        <div className="body">
+            <Switch>
+              <Route path="/product/:category">
+                <Product/>
+              </Route>
+              <Route path="/product">
+                <Product/>
+              </Route>
+              <Route path="/product-detail/:id">
+                <ProductDetail />
+              </Route>
+              <Route path="/">
+                <Home />
+              </Route>
+            </Switch>          
+        </div>
+        <Footer />
+      </Router>
     </div>
   );
 };
 
-export default App;
+export default withAuthentication(App);

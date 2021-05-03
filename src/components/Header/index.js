@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
+import { Link } from 'react-router-dom';
 import { ReactComponent as MenuIcon } from '../../global/assets/icons/hamburger.svg';
 import { HEADER } from '../../constants';
 import Search from '../Search';
@@ -29,9 +30,9 @@ const Header = ({ type, isLoggedIn = false, bgColor = HEADER.BACKGROUND.WHITE })
   return (
     <header ref={header} className={headerType} style={{ backgroundColor:bgColor, color:textColor }}>
       <SideBar openDrawer={drawerState} currentState={(state) => setDrawerState(state)}/>
-      <div className="logo">
+      <div className="logo cursor-pointer">
         <MenuIcon fill={textColor} stroke={textColor} className="menuIcon" onClick={() => setDrawerState(true)}/>
-        <span className="title">Little Tag</span>
+        <Link className="cursor-pointer decoration-none" to="/"><span className="title">Little Tag</span></Link>
       </div>  
       <div className="search">
         <Search />

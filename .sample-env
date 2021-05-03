@@ -1,0 +1,4 @@
+REACT_APP_API_KEY=<api_key>
+REACT_APP_AUTH_DOMAIN=<auth_domain>
+REACT_APP_PROJECT_ID=<project_id>
+REACT_APP_STORAGE_BUCKET=<storage_bucket>

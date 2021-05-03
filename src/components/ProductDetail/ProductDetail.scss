@@ -20,6 +20,11 @@ $root: '.ProductDetail';
     border-radius: 3px;
     margin: auto;
     transition: 0.5s;
+    background-size: contain;
+    background-origin: content-box;
+    padding: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   .sliding-dots{

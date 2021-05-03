@@ -21,3 +21,12 @@ export const DRAWER = {
   OPEN : 'open',
   CLOSE : 'close'
 }
+
+export const PRODUCT = {
+  All : 'https://fakestoreapi.com/products',
+  DEFAULT: 'All Products'
+}
+
+export const CURRENCY = {
+  IND: '₹'
+}

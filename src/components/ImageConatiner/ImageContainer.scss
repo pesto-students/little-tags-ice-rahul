@@ -6,7 +6,13 @@ $root: '.ImageContainer';
   border-radius: 15px;
   display: inline-block;
   position: relative;
-  background-color: green;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: background-size 1s;
+  background-origin: content-box;
+  padding: 5px 0 5px 0;
 
   .imageContainerTitle{
     position: absolute;

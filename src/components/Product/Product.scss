@@ -3,7 +3,7 @@ $root: '.Product';
 #{$root}{
   border: 1px solid #ccc;
   border-radius: 10px;
-  min-width: 70%;
+  width: 70%;
   padding: 10px 15px;
   display: flex;
   justify-content: space-between;
@@ -23,5 +23,9 @@ $root: '.Product';
   }
   .product-title{
     flex: 1;
+  }
+
+  @media only screen and (max-width:768px) {
+    width: 100%;
   }
 }

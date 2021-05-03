@@ -12,7 +12,7 @@ const ImageContainer = ({ type = IMAGE_CONTAINER.TYPE.PRIMARY, title = 'Image', 
     'img-tertiary' : type === IMAGE_CONTAINER.TYPE.TERTIARY
   });
   return (
-    <div className={`${ImageContainerConfig} ${className ? className : ''}`}>
+    <div className={`${ImageContainerConfig} ${className ? className : ''}`} style={{backgroundImage: link !== '#' ? `url(${link})` : ''}}>
       {
         title !== '' ?
         <div className="imageContainerTitle">{title}</div>
