@@ -4,7 +4,11 @@ import { CURRENCY } from '../../constants/index';
 import './ProductDetail.scss';
 
 const ProductDetail = ({product}) => {
+/*
+  variant and stock are future variable to be used to sync with inventory
   const { price, name, description, variant, stock, image} = product;
+*/
+  const { price, name, description, image} = product;
 
   return (
     <section className="ProductDetail">

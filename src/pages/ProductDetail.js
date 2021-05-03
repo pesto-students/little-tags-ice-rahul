@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import withAuthorization from '../components/Session/withAuthorization';
+// import withAuthorization from '../components/Session/withAuthorization';
 import { useParams } from 'react-router-dom';
 import useFetchApi from '../hooks/FetchApi';
 import { PRODUCT } from '../constants/index';
@@ -39,6 +39,7 @@ const ProductDetail = () => {
       {
         loading ? <div style={{display: 'flex', justifyContent: 'center' }}>Loading Details</div> : <ItemDetail product={product}/>
       }
+      {error}
     </>
   );
 
