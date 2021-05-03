@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 
 const FetchApi = (url, body = null) => {
   const [ data, setData ] = useState(null);
-  const [ error, setError ] = useState('Loading Data');
+  const [ error, setError ] = useState(null);
   const [ loading, setLoading ] = useState(true);
 
   useEffect(()=>{

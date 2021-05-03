@@ -57,7 +57,8 @@ $root: '.ProductDetail';
   .product-quantity{
     span:nth-child(1), span:nth-child(3){
       padding: 5px 10px;
-      border:1px solid;
+      border:1px solid black;
+      user-select: none;
     }
     span:nth-child(1){
       border-top-right-radius: 0;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../Button';
 import { CURRENCY } from '../../constants/index';
 import './ProductDetail.scss';
@@ -9,6 +9,14 @@ const ProductDetail = ({product}) => {
   const { price, name, description, variant, stock, image} = product;
 */
   const { price, name, description, image} = product;
+  const [qty, setQty] = useState(1);
+  const add = () => {
+    setQty(qty+1);
+  }
+
+  const substract = () => {
+    qty>1 ? setQty(qty-1) : setQty(0);
+  }
 
   return (
     <section className="ProductDetail">
@@ -43,9 +51,9 @@ const ProductDetail = ({product}) => {
         </span>
         <span className="product-size">Quantity</span>
         <span className="product-quantity">
-          <span className="cursor-pointer">-</span>
-          <p className="product-qty">1</p>
-          <span className="cursor-pointer">+</span>
+          <span className="cursor-pointer" onClick={substract}>-</span>
+          <p className="product-qty">{ qty }</p>
+          <span className="cursor-pointer" onClick={add}>+</span>
         </span>
         <Button />
       </div>

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { ReactComponent as LoginIcon } from '../../global/assets/icons/icon-login.svg';
 import { ReactComponent as LogoutIcon } from '../../global/assets/icons/icon-logout.svg';
+import { ReactComponent as CartIcon } from '../../global/assets/icons/icon-cart.svg';
 import { connect } from 'react-redux'
 import FirebaseContext from '../Firebase/context';
 import './Login.scss';
@@ -31,6 +32,7 @@ const Login = ({ fill, user }) => {
       {
         user ?
         <>
+          <CartIcon fill={fill} className="shoppingIcon"/>
           <span className="loginText">
             Log Out
           </span>

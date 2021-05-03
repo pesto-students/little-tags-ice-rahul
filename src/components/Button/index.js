@@ -6,7 +6,7 @@ const Button = () => {
   return (
     <div className="Button cursor-pointer">
       <ShoppingIcon className="shopping-icon" />
-      <span>Add to Cart</span>
+      <span style={{userSelect: 'none'}}>Add to Cart</span>
     </div>
   );
 }
