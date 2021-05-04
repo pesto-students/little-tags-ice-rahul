@@ -49,7 +49,7 @@ const ProductDetail = (props) => {
       setIsUpdate(false);
       setMsg('Cart Updated Successfully')
     }
-  },[firebase, props.authUser.uid, props.cartItem, isUpdate])
+  },[firebase, props.authUser?.uid, props.cartItem, isUpdate])
 
   return (
     <section className="ProductDetail">
