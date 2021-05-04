@@ -4,6 +4,7 @@ import { CURRENCY } from '../../constants/index';
 import { connect } from 'react-redux';
 import { addToCart } from '../../actions';
 import FirebaseContext from '../Firebase/context';
+import ProductCounter from '../ProductCounter';
 import './ProductDetail.scss';
 
 const ProductDetail = (props) => {
@@ -11,20 +12,11 @@ const ProductDetail = (props) => {
   variant and stock are future variable to be used to sync with inventory
   const { price, name, description, variant, stock, image} = product;
 */
-  console.log(props.cartItem, 'Item');
-  const { price, name, description, image} = props.product;
   const [qty, setQty] = useState(1);
+  const { price, name, description, image} = props.product;
   const firebase = useContext(FirebaseContext);
   const [isUpdate, setIsUpdate ] = useState(false)
   const [msg, setMsg] = useState('')
-  
-  const add = () => {
-    setQty(qty+1);
-  }
-
-  const substract = () => {
-    qty>1 ? setQty(qty-1) : setQty(0);
-  }
 
   const addProductToCart = () => {
     if (props.authUser)
@@ -81,11 +73,7 @@ const ProductDetail = (props) => {
           <span className="mr-10 cursor-pointer">XL</span>
         </span>
         <span className="product-size">Quantity</span>
-        <span className="product-quantity">
-          <span className="cursor-pointer" onClick={substract}>-</span>
-          <p className="product-qty">{ qty }</p>
-          <span className="cursor-pointer" onClick={add}>+</span>
-        </span>
+        <ProductCounter onChange={(val) => setQty(val)}/>
         <Button onClick={addProductToCart}/>
         { msg }
       </div>

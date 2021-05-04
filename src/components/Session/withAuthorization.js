@@ -15,7 +15,7 @@ const withAuthorization = (Component) => {
     })
     return props.authUser ? 
     <Component {...props} /> :
-    <p>You need to logged in to view this page</p>
+    <p className="text-center">You need to logged in to view this page</p>
   }
 
   const mapStateToProps = (state) => ({

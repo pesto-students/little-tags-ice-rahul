@@ -1,0 +1,32 @@
+$root: '.ProductCounter';
+
+#{$root}{
+  .product-quantity{
+    span{
+      border-radius: 3px;
+    }
+    span:nth-child(1), span:nth-child(3){
+      padding: 5px 10px;
+      border:1px solid black;
+      user-select: none;
+    }
+    span:nth-child(1){
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    span:nth-child(3){
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    .product-qty{
+      all: unset;
+      width: 50px;
+      display: inline-block;
+      text-align: center;
+      padding: 5px;
+      border: 1px solid;
+      border-left: 0;
+      border-right: 0;
+    }
+  }
+}

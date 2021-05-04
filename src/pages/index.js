@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from './Home';
 import Product from './Product';
 import ProductDetail from './ProductDetail';
+import Cart from './Cart';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { HEADER } from '../constants';
@@ -41,6 +42,9 @@ const App = () => {
               </Route>
               <Route path="/product-detail/:id">
                 <ProductDetail />
+              </Route>
+              <Route path="/cart">
+                <Cart/>
               </Route>
               <Route path="/">
                 <Home />

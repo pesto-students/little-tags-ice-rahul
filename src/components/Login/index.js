@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { ReactComponent as LoginIcon } from '../../global/assets/icons/icon-login.svg';
 import { ReactComponent as LogoutIcon } from '../../global/assets/icons/icon-logout.svg';
 import { ReactComponent as CartIcon } from '../../global/assets/icons/icon-cart.svg';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import FirebaseContext from '../Firebase/context';
 import './Login.scss';
@@ -28,24 +29,24 @@ const Login = ({ fill, user, cart }) => {
     }
   }
   return (
-    <div className="Login" onClick={handleGoogleSignIn}>
+    <>
       {
         user ?
-        <>
-          <span className="cartCount" attr-count={cart.length}><CartIcon fill={fill} className="shoppingIcon"/></span>
-          <span className="loginText">
+        <div className="Login">
+          <span className="cartCount" attr-count={cart.length}><Link to="/cart"><CartIcon fill={fill} className="shoppingIcon"/></Link></span>
+          <span className="loginText" onClick={handleGoogleSignIn}>
             Log Out
           </span>
-          <LogoutIcon fill={fill} className="loginIcon"/>
-        </> :
-        <>
+          <LogoutIcon fill={fill} className="loginIcon" onClick={handleGoogleSignIn}/>
+        </div> :
+        <div className="Login" onClick={handleGoogleSignIn}>
           <span className="loginText">
             Log in / Sign up
           </span>
           <LoginIcon fill={fill} className="loginIcon"/>
-        </>
+        </div>
       }
-    </div>
+    </>
   )
 }
 
