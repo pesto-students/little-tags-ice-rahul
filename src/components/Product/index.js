@@ -2,10 +2,9 @@ import React from 'react';
 import ImageContainer from '../ImageConatiner';
 import { Link } from 'react-router-dom';
 import { IMAGE_CONTAINER } from '../../constants';
-import ProductCounter from '../ProductCounter';
 import './Product.scss';
 
-const Product = ({image, id = 1, title = "Product Name", price = "₹ 1200.00" , className, linkable = true, productCounter = false, quantity = 1, onChange}) => {
+const Product = ({image, id = 1, title = "Product Name", price = "₹ 1200.00" , className, linkable = true, children}) => {
 
   const ProductRow = () => {
     return (
@@ -16,8 +15,7 @@ const Product = ({image, id = 1, title = "Product Name", price = "₹ 1200.00" ,
         <div className="product-title">
           { title }
           {
-            productCounter ?
-            <ProductCounter onChange={onChange ? (val) => onChange(val) : () => {}} quantity={quantity}/> : ''
+            children
           }
         </div>
         <div className="product-price">

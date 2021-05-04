@@ -3,7 +3,9 @@ import withAuthorization from '../components/Session/withAuthorization';
 import { connect } from 'react-redux'
 import FirebaseContext from '../components/Firebase/context'
 import Product from '../components/Product'
-import { addToCart } from '../actions'
+import ProductCounter from '../components/ProductCounter';
+import Button from '../components/Button';
+import { addToCart, removeFromCart } from '../actions'
 import { CURRENCY } from '../constants';
 
 const Cart = (props) => {
@@ -15,6 +17,10 @@ const Cart = (props) => {
       ...selectProduct,
       qty: quantity
     })
+    setUpdateDatabase(true);
+  }
+  const removeProduct = (val) => {
+    props.removeFromCart(val)
     setUpdateDatabase(true);
   }
   useEffect(()=>{
@@ -39,12 +45,15 @@ const Cart = (props) => {
                     price={`${CURRENCY.IND} ${val.price * val.qty}`} 
                     key={val.id} 
                     linkable={false} 
-                    productCounter={true} 
-                    quantity={val.qty}
-                    onChange={(quantity) => { modifyCart(quantity, val.id) }}
-                  />
+                  >
+                    <div className="display-flex align-center">
+                      <ProductCounter onChange={(quantity) => modifyCart(quantity, val.id)} quantity={val.qty}/>
+                      <span className="margin-10 cursor-pointer" onClick={() => removeProduct(val)}>Remove</span>
+                    </div>
+                  </Product>
         })
       }
+      <Button withIcon={false} text="Proceed to Checkout" onClick={() => {alert('Hello')}}/>
     </section>
     </>
   )
@@ -55,4 +64,4 @@ const mapStateToProps = (state) => ({
   cart: state.cartState.cartItem
 })
 
-export default connect(mapStateToProps, { addToCart })(withAuthorization(Cart));
+export default connect(mapStateToProps, { addToCart, removeFromCart })(withAuthorization(Cart));
