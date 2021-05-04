@@ -62,10 +62,10 @@ const SideBar = ({ openDrawer = false, currentState, user}) => {
       </div> 
       <div className="sideBarCategories">
         <span>Categories</span>
-        <span><Link to="/product/Men's Clothing" className="cursor-pointer decoration-none">Men's Clothing</Link></span>
-        <span><Link to="/product/Jewelery" className="cursor-pointer decoration-none">Jewelery</Link></span>
-        <span><Link to="/product/Women's Clothing" className="cursor-pointer decoration-none">Women's Clothing</Link></span>
-        <span><Link to="/product/Electronics" className="cursor-pointer decoration-none">Electronic Gadgets</Link></span>
+        <span><Link to="/product/Men's Clothing" className="cursor-pointer display-flex decoration-none flex-1">Men's Clothing</Link></span>
+        <span><Link to="/product/Jewelery" className="cursor-pointer display-flex decoration-none flex-1">Jewelery</Link></span>
+        <span><Link to="/product/Women's Clothing" className="cursor-pointer display-flex decoration-none flex-1">Women's Clothing</Link></span>
+        <span><Link to="/product/Electronics" className="cursor-pointer display-flex decoration-none flex-1">Electronic Gadgets</Link></span>
       </div>
       <hr style={{width:'calc(100% - 50px)'}}/>
       <div className="sideBarCategories" style={{flexGrow:1}}>

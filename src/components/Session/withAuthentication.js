@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from 'react'
 import { connect } from 'react-redux';
-import { setAuthUser } from '../../actions';
+import { setAuthUser, addToCart, clearCart } from '../../actions';
 import FirebaseContext from '../Firebase/context'
 
 const withAuthentication = (Component) => {
@@ -16,9 +16,16 @@ const withAuthentication = (Component) => {
       props.setAuthUser(null);
     }
 
-    const next = (authUser) => {
+    const next = (authUser, cart) => {
       saveToLocalStorage(authUser);
       props.setAuthUser(authUser);
+      props.clearCart();
+      if(cart)
+      {
+        cart.forEach((val) => {
+          props.addToCart(val);
+        })
+      }
     }
 
     useEffect(()=>{
@@ -28,7 +35,7 @@ const withAuthentication = (Component) => {
     })
     return <Component {...props} />
   }
-  return connect(null, { setAuthUser })(NewComponent);
+  return connect(null, { setAuthUser, addToCart, clearCart })(NewComponent);
 }
 
 export default withAuthentication;

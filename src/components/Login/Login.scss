@@ -10,23 +10,50 @@ $root: ".Login";
   transition: 0.2s;
   margin-left: 10px;
 
-  &:hover {
-    filter: drop-shadow(0px 0px 12px black);
-  }
-
   .loginText {
     display: block;
+    &:hover {
+      filter: drop-shadow(0px 0px 12px black);
+    }
   }
 
   .loginIcon{
     display: none;
     width: 24px;
     height: 24px;
+    &:hover {
+      filter: drop-shadow(0px 0px 12px black);
+    }
   }
   .shoppingIcon{
     width: 24px;
     height: 24px;
-    margin: 0 10px 0 10px;
+    margin: 0 15px 0 10px;
+  }
+
+  .cartCount{
+    position: relative;
+
+    &::before{
+      content: attr(attr-count);
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: red;
+      border-radius: 50%;
+      right: 8px;
+      top: -5px;
+      box-shadow: 0 0 0 2px white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.75em;
+      color: white;
+    }
+
+    &:hover {
+      filter: drop-shadow(0px 0px 12px black);
+    }
   }
 
   @media only screen and (max-width: 600px) {

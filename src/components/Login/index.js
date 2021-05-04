@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import FirebaseContext from '../Firebase/context';
 import './Login.scss';
 
-const Login = ({ fill, user }) => {
+const Login = ({ fill, user, cart }) => {
   const firebase = useContext(FirebaseContext);
   const handleGoogleSignIn = ()=> {
     if(!user){
@@ -32,7 +32,7 @@ const Login = ({ fill, user }) => {
       {
         user ?
         <>
-          <CartIcon fill={fill} className="shoppingIcon"/>
+          <span className="cartCount" attr-count={cart.length}><CartIcon fill={fill} className="shoppingIcon"/></span>
           <span className="loginText">
             Log Out
           </span>
@@ -50,7 +50,8 @@ const Login = ({ fill, user }) => {
 }
 
 const mapStateToProps = (state) => ({
-  user: state.sessionState.authUser
+  user: state.sessionState.authUser,
+  cart: state.cartState.cartItem,
 })
 
 export default connect(mapStateToProps)(Login);

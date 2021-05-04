@@ -2,9 +2,9 @@ import React from 'react';
 import { ReactComponent as ShoppingIcon } from '../../global/assets/icons/icon-shopping-cart.svg';
 import './Button.scss';
 
-const Button = () => {
+const Button = ({onClick}) => {
   return (
-    <div className="Button cursor-pointer">
+    <div className="Button cursor-pointer" onClick={onClick}>
       <ShoppingIcon className="shopping-icon" />
       <span style={{userSelect: 'none'}}>Add to Cart</span>
     </div>

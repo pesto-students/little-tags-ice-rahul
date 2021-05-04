@@ -24,26 +24,29 @@ class Firebase {
 
   user = (uid) => this.db.ref(`/users/${uid}`);
 
+  cart = (uid) => this.db.ref(`/cart/${uid}`);
+
   onAuthChangeListener = (next, fallback) => {
     return this.auth.onAuthStateChanged(authUser => {
       if(authUser){
-        this.user(authUser.uid)
-        .once('value')
-        .then((snapshot) => {
-          const dbUser = snapshot.val();
+        Promise.all([
+          this.user(authUser.uid).once('value'),
+          this.cart(authUser.uid).once('value')
+        ])
+        .then((results)=> {
+          const [ User, Cart ] = results;
+          const dbUser = User.val();
           const user = {
             uid: authUser.uid,
             email: authUser.email,
             emailVerifed: authUser.emailVerified,
             ...dbUser
           }
-//          console.log(`authuser:: listener:: ${user}`);
-          next(user)
+          const cart = Cart.val();
+          next(user,cart);
         })
-        
       } else {
         fallback();
-        // TODO: handle if user not logged in
       }
     })
   }

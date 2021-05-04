@@ -13,7 +13,7 @@ const Product = () => {
     if(productCategory !== PRODUCT.DEFAULT && products) {
       productList = products.filter((val) => val.category.toUpperCase() === productCategory.toUpperCase())
     }
-    console.log(productList)
+
     return productList ? productList.map((value, idx) => {
       return (
         <Item className="margin-10" key={value.id} image={value.image} id={value.id} title={value.title} price={`${CURRENCY.IND} ${value.price}`}></Item>

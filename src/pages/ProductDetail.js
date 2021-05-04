@@ -24,6 +24,7 @@ const ProductDetail = () => {
       const productDetail = data.filter((val) => val.id === parseInt(id))[0]
       setProduct({
         ...initialState,
+        id:productDetail.id,
         price: productDetail.price,
         name: productDetail.title,
         description: productDetail.description,
