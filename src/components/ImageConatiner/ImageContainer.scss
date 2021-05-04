@@ -40,3 +40,9 @@ $root: '.ImageContainer';
 .img-tertiary{
   width:100%;
 }
+
+@media only screen and (max-width:750px) {
+  .img-secondary{
+    width: 85%;
+  }
+}
