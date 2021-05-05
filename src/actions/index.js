@@ -18,3 +18,22 @@ export const removeFromCart = (cartItem) => ({
 export const clearCart = () => ({
   type: ACTIONS.CLEAR_CART
 })
+
+export const addAddress = (address) => ({
+  type: ACTIONS.ADD_ADDRESS,
+  address
+})
+
+export const removeAddress = (address) => ({
+  type: ACTIONS.REMOVE_ADDRESS,
+  address
+})
+
+export const clearAddress = () => ({
+  type: ACTIONS.CLEAR_ADDRESS
+})
+
+export const addAddressState = (payload) => ({
+  type: ACTIONS.ADD_STATE,
+  payload
+})

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import withAuthorization from '../components/Session/withAuthorization';
 import { connect } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 import FirebaseContext from '../components/Firebase/context'
 import Product from '../components/Product'
 import ProductCounter from '../components/ProductCounter';
@@ -9,6 +10,7 @@ import { addToCart, removeFromCart } from '../actions'
 import { CURRENCY } from '../constants';
 
 const Cart = (props) => {
+  const history = useHistory();
   const firebase = useContext(FirebaseContext)
   const [updateDatabase, setUpdateDatabase] = useState(false);
   const modifyCart = (quantity, id) => {
@@ -53,7 +55,7 @@ const Cart = (props) => {
                   </Product>
         })
       }
-      <Button withIcon={false} text="Proceed to Checkout" onClick={() => {alert('Hello')}}/>
+      <Button withIcon={false} text="Proceed to Checkout" onClick={() => history.push('/delivery') }/>
     </section>
     </>
   )

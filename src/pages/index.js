@@ -6,6 +6,9 @@ import ProductDetail from './ProductDetail';
 import Cart from './Cart';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Delivery from './Delivery';
+import AddAddress from './AddAddress';
+import Payment from './Payment';
 import { HEADER } from '../constants';
 import withAuthentication from '../components/Session/withAuthentication'
 import '../global/styles/common.scss';
@@ -45,6 +48,15 @@ const App = () => {
               </Route>
               <Route path="/cart">
                 <Cart/>
+              </Route>
+              <Route path="/delivery">
+                <Delivery/>
+              </Route>
+              <Route path="/add-address">
+                <AddAddress />
+              </Route>
+              <Route path="/payment/:id">
+                <Payment />
               </Route>
               <Route path="/">
                 <Home />

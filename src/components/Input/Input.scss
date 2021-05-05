@@ -1,0 +1,30 @@
+$root: '.Input';
+
+#{$root} {
+  display: flex;
+  flex-direction: column;
+
+  label{
+    font-size: 0.9em;
+    margin: 5px;
+    color: #000;
+  }
+
+  input{
+    padding: 10px 15px;
+    min-width: 75%;
+    outline: 0;
+    border: 1px solid #000;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row-reverse;
+    transition: 0.4s;
+    box-shadow: 0 0 5px 0px #ccc;
+    background-color: white; 
+    font-size: 1em;
+
+    &:focus{
+      box-shadow: 0 0 5px 0px #C9F3EE;
+    }
+  }
+}
