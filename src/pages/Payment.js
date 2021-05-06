@@ -64,7 +64,7 @@ const Payment = (props) => {
           showAddress()
         }
         <div className="title-center">Method of Payment</div>
-        <ul className="padding-0 margin-0 width-30-p list-none font-1-25">
+        <ul className="padding-0 margin-0 width-30-p list-none font-1-25 w-100-small">
           <li className="display-flex align-flex-end gap-10 margin-10">
             <input type="radio" name="payment" className="width-20 height-20 custom-radio cursor-pointer" value="RazorPay" /><span>RazorPay</span>
           </li>

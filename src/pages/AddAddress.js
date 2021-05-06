@@ -47,7 +47,7 @@ const AddAddress = (props) => {
     <>
       <section className="product-list">
         <div className="title-center">Deliver To</div>
-          <div className="display-flex w-70 justify-between gap-20 flex-direction-column-small gap-0-small">
+          <div className="display-flex w-70 w-100-small justify-between gap-20 flex-direction-column-small gap-0-small">
             <div className="flex-1">
               <Input name="fname" label="First Name" placeholder="" onChange={(val) => modifyState({fname: val})} className="margin-10"/>
               <Input name="lname" label="Last Name" placeholder="" onChange={(val) => modifyState({lname: val})} className="margin-10"/>

@@ -44,7 +44,7 @@ const ProductDetail = (props) => {
   },[firebase, props.authUser?.uid, props.cartItem, isUpdate])
 
   return (
-    <section className="ProductDetail">
+    <section className="ProductDetail flex-column-small">
       <div className="product-image">
         <div className="sliding-image" style={{backgroundImage: image ? `url('${image[0].url}')` : ''}}></div>
         <div className="sliding-dots">

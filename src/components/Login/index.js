@@ -32,7 +32,7 @@ const Login = ({ fill, user, cart }) => {
     <>
       {
         user ?
-        <div className="Login">
+        <div className="Login align-flex-start gap-10 padding-t-10-p">
           <span className="cartCount" attr-count={cart.length}><Link to="/cart"><CartIcon fill={fill} className="shoppingIcon"/></Link></span>
           <span className="loginText" onClick={handleGoogleSignIn}>
             Log Out

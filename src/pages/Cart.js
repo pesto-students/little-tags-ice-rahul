@@ -56,7 +56,7 @@ const Cart = (props) => {
                     key={val.id} 
                     linkable={false} 
                   >
-                    <div className="display-flex align-center">
+                    <div className="display-flex align-center flex-column-small">
                       <ProductCounter onChange={(quantity) => modifyCart(quantity, val.id)} quantity={val.qty}/>
                       <span className="margin-10 cursor-pointer" onClick={() => removeProduct(val)}>Remove</span>
                     </div>

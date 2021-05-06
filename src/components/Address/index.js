@@ -22,7 +22,7 @@ const Address = ({
   },[address, phone])
 
   return (
-    <div className={`Address ${className ? className : ''}`}>
+    <div className={`Address w-100-small ${className ? className : ''}`}>
       {
         withRadio ? 
         <span className="display-flex align-flex-start margin-10">

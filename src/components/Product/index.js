@@ -31,7 +31,7 @@ const Product = ({image, id = 1, title = "Product Name", price = "1200.00" , cla
     <div className={`Product ${className ? className : ''}`}>
       {
         linkable ?
-        <Link to={`/product-detail/${id}`} className="cursor-pointer display-flex decoration-none flex-1">
+        <Link to={`/product-detail/${id}`} className="cursor-pointer display-flex decoration-none flex-1 w-100">
           {
             ProductRow()
           }
