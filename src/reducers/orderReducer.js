@@ -10,6 +10,10 @@ function orderReducer(state = initialState, action){
       return {
         order: [...state.order, action.order]
       }
+    case ACTIONS.CLEAR_ORDER: 
+      return {
+        ...initialState
+      }
     default: return state;
   }
 }

@@ -42,3 +42,7 @@ export const placeOrder = (order) => ({
   type: ACTIONS.PLACE_ORDER,
   order
 })
+
+export const clearOrder = () => ({
+  type: ACTIONS.CLEAR_ORDER
+})

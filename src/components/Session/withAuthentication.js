@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from 'react'
 import { connect } from 'react-redux';
-import { setAuthUser, addToCart, clearCart, addAddress, clearAddress } from '../../actions';
+import { setAuthUser, addToCart, clearCart, addAddress, clearAddress, clearOrder, placeOrder } from '../../actions';
 import FirebaseContext from '../Firebase/context'
 
 const withAuthentication = (Component) => {
@@ -32,7 +32,12 @@ const withAuthentication = (Component) => {
           props.addAddress(val)
         })
       }
-      console.log(order, "order")
+      props.clearOrder();
+      if(order){
+        order.forEach((val) => {
+          props.placeOrder(val)
+        })
+      }
     }
 
     useEffect(()=>{
@@ -42,7 +47,7 @@ const withAuthentication = (Component) => {
     })
     return <Component {...props} />
   }
-  return connect(null, { setAuthUser, addToCart, clearCart, addAddress, clearAddress })(NewComponent);
+  return connect(null, { setAuthUser, addToCart, clearCart, addAddress, clearAddress, clearOrder, placeOrder })(NewComponent);
 }
 
 export default withAuthentication;

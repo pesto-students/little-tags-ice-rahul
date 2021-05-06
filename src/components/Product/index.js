@@ -6,7 +6,7 @@ import './Product.scss';
 
 const Product = ({image, id = 1, title = "Product Name", price = "1200.00" , className, linkable = true, children}) => {
 
-  price = `${price.split(" ")[0]} ${Math.round(parseFloat(price.split(" ")[1])*100)/100}`;
+  price = typeof(price) === 'string' && price.includes(" ") ? `${price.split(" ")[0]} ${Math.round(parseFloat(price.split(" ")[1])*100)/100}` : price;
 
   const ProductRow = () => {
     return (
@@ -28,7 +28,7 @@ const Product = ({image, id = 1, title = "Product Name", price = "1200.00" , cla
   }
 
   return (
-    <div className={`Product ${className}`}>
+    <div className={`Product ${className ? className : ''}`}>
       {
         linkable ?
         <Link to={`/product-detail/${id}`} className="cursor-pointer display-flex decoration-none flex-1">

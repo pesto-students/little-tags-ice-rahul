@@ -7,3 +7,4 @@ export const REMOVE_ADDRESS = "REMOVE_ADDRESS";
 export const CLEAR_ADDRESS = "CLEAR_ADDRESS";
 export const ADD_STATE = "ADD_STATE";
 export const PLACE_ORDER = "PLACE_ORDER";
+export const CLEAR_ORDER = "CLEAR_ORDER";
