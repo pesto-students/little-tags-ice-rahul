@@ -9,7 +9,7 @@ $root: '.ImageContainer';
   background-color: white;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   transition: background-size 1s;
   background-origin: content-box;
   padding: 5px 0 5px 0;
