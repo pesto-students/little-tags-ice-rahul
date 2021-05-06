@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { ReactComponent as MenuIcon } from '../../global/assets/icons/hamburger.svg';
 import { HEADER } from '../../constants';
 import { useLocation } from 'react-router-dom';
-// import Search from '../Search';
+import Search from '../Search';
 import Login from '../Login';
 import User from '../User';
 import SideBar from '../SideBar';
@@ -56,7 +56,7 @@ const Header = ({ type, isLoggedIn = false, bgColor = HEADER.BACKGROUND.WHITE })
         <Link className="cursor-pointer decoration-none" to="/"><span className="title">Little Tag</span></Link>
       </div>  
       <div className="search">
-        {/*<Search />*/}
+        <Search />
       </div>
       {
         isLogin
