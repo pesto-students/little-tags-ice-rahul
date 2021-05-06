@@ -10,6 +10,7 @@ import Delivery from './Delivery';
 import AddAddress from './AddAddress';
 import Payment from './Payment';
 import Thanks from './Thanks';
+import PastOrders from './PastOrders';
 import { HEADER } from '../constants';
 import withAuthentication from '../components/Session/withAuthentication'
 import '../global/styles/common.scss';
@@ -58,6 +59,9 @@ const App = () => {
               </Route>
               <Route path="/payment/:id">
                 <Payment />
+              </Route>
+              <Route path="/past-orders">
+                <PastOrders />
               </Route>
               <Route path="/thanks">
                 <Thanks />
