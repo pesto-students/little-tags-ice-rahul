@@ -56,7 +56,7 @@ const Header = ({ type, isLoggedIn = false, bgColor = HEADER.BACKGROUND.WHITE })
         <Link className="cursor-pointer decoration-none" to="/"><span className="title">Little Tag</span></Link>
       </div>  
       <div className="search">
-        <Search />
+        {/*<Search />*/}
       </div>
       {
         isLogin

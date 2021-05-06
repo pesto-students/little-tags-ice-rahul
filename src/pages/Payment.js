@@ -51,7 +51,9 @@ const Payment = (props) => {
       alert('Please Select a Payment Method')
       return
     }
-    props.placeOrder({orderDetail: props.cart, deliveryAddress: selectedAddress, paymentMethod:selectedPaymentMethod})
+    const d = new Date();
+    const currentDate = `${d.getDate() > 9 ? '' : '0'}${d.getDate()}-${d.getMonth() > 9 ? '' : '0'}${d.getMonth()}-${d.getFullYear()} ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`;
+    props.placeOrder({orderDetail: props.cart, deliveryAddress: selectedAddress, paymentMethod:selectedPaymentMethod, orderDate: currentDate})
     props.clearCart()
     setUpdateDatabase(true)
   }

@@ -18,7 +18,11 @@ const PastOrders = (props) => {
                           id={products.id}
                           title={products.name}
                           price={`${CURRENCY.IND} ${products.price}`}
-                        />
+                        >
+                        <div className="display-flex align-center flex-column-small">
+                          Order Date: {val.orderDate}
+                        </div>
+                        </Product>
               })
           })
         }

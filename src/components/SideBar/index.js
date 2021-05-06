@@ -5,16 +5,23 @@ import { ReactComponent as CrossIcon } from '../../global/assets/icons/icon-cros
 import { ReactComponent as UserIcon } from '../../global/assets/icons/icon-user.svg';
 import { Link } from 'react-router-dom';
 import { DRAWER } from '../../constants';
+import { setDrawerState } from '../../actions'
 import './SideBar.scss';
 
-const SideBar = ({ openDrawer = false, currentState, user}) => {
+const SideBar = ({ openDrawer = false, currentState, user, drawerPosition, setDrawerState}) => {
   const firebase = useContext(FirebaseContext);
   const sideBar = useRef(null);
 
   const toggleDrawer = (drawerState) => {
     const position = drawerState === DRAWER.OPEN ? '0px' : '-500px';
+    setDrawerState(drawerState)
     sideBar.current.style.left=position;
   }
+
+  useEffect(()=>{
+    toggleDrawer(drawerPosition)
+  // eslint-disable-next-line 
+  },[drawerPosition])
 
   const handleGoogleSignIn = ()=> {
     if(!user){
@@ -41,6 +48,7 @@ const SideBar = ({ openDrawer = false, currentState, user}) => {
       toggleDrawer(DRAWER.OPEN);
       currentState(false);
     }
+  // eslint-disable-next-line 
   },[openDrawer, currentState])
 
   return (
@@ -84,7 +92,8 @@ const SideBar = ({ openDrawer = false, currentState, user}) => {
 }
 
 const mapStateToProps = (state) => ({
-  user: state.sessionState.authUser
+  user: state.sessionState.authUser,
+  drawerPosition: state.drawerState.position
 })
 
-export default connect(mapStateToProps)(SideBar);
+export default connect(mapStateToProps, { setDrawerState })(SideBar);

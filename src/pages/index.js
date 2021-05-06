@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ScrollToTop from '../components/ScrollToTop';
 import Home from './Home';
 import Product from './Product';
 import ProductDetail from './ProductDetail';
@@ -40,34 +41,34 @@ const App = () => {
         <div className="body">
             <Switch>
               <Route path="/product/:category">
-                <Product/>
+                <ScrollToTop><Product/></ScrollToTop>
               </Route>
               <Route path="/product">
-                <Product/>
+                <ScrollToTop><Product/></ScrollToTop>
               </Route>
               <Route path="/product-detail/:id">
-                <ProductDetail />
+                <ScrollToTop><ProductDetail /></ScrollToTop>
               </Route>
               <Route path="/cart">
-                <Cart/>
+                <ScrollToTop><Cart/></ScrollToTop>
               </Route>
               <Route path="/delivery">
-                <Delivery/>
+                <ScrollToTop><Delivery/></ScrollToTop>
               </Route>
               <Route path="/add-address">
-                <AddAddress />
+                <ScrollToTop><AddAddress /></ScrollToTop>
               </Route>
               <Route path="/payment/:id">
-                <Payment />
+                <ScrollToTop><Payment /></ScrollToTop>
               </Route>
               <Route path="/past-orders">
-                <PastOrders />
+                <ScrollToTop><PastOrders /></ScrollToTop>
               </Route>
               <Route path="/thanks">
-                <Thanks />
+                <ScrollToTop><Thanks /></ScrollToTop>
               </Route>
               <Route path="/">
-                <Home />
+                <ScrollToTop><Home /></ScrollToTop>
               </Route>
             </Switch>          
         </div>

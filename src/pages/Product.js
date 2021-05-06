@@ -33,7 +33,7 @@ const Product = () => {
 
         <div className="product-pagination">
           <div className="product-prev cursor-pointer">&#8249;&#8249; Prev</div>
-          <div className="product-page"><span data-page="1"></span><span data-page="2"></span><span data-page="3"></span></div>
+          <div className="product-page"><span data-page="1"></span></div>
           <div className="product-next cursor-pointer">Next &#8250;&#8250;</div>
         </div>
       </section>

@@ -46,3 +46,8 @@ export const placeOrder = (order) => ({
 export const clearOrder = () => ({
   type: ACTIONS.CLEAR_ORDER
 })
+
+export const setDrawerState = (position) => ({
+  type: ACTIONS.DRAWER_STATE,
+  position
+})

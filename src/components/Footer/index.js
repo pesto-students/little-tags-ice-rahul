@@ -4,6 +4,7 @@ import { ReactComponent as JCBIcon } from '../../global/assets/icons/payment_jcb
 import { ReactComponent as MastercardIcon } from '../../global/assets/icons/payment_mastercard.svg';
 import { ReactComponent as PaypalIcon } from '../../global/assets/icons/payment_paypal.svg';
 import { ReactComponent as VisaIcon } from '../../global/assets/icons/payment_visa.svg';
+import { Link } from 'react-router-dom';
 import './Footer.scss';
 
 const Footer = () => {
@@ -22,10 +23,10 @@ const Footer = () => {
         </div>
         <div className="categoryInfo">
           <p className="title">Categories</p>
-          <span>Accessories (45)</span>
-          <span>Jeans (278)</span>
-          <span>Tops (64)</span>
-          <span>Jackets (3)</span>
+          <span><Link to="/product/Men's Clothing" className="cursor-pointer display-flex decoration-none flex-1">Men's Clothing</Link></span>
+          <span><Link to="/product/Jewelery" className="cursor-pointer display-flex decoration-none flex-1">Jewelery</Link></span>
+          <span><Link to="/product/Women's Clothing" className="cursor-pointer display-flex decoration-none flex-1">Women's Clothing</Link></span>
+          <span><Link to="/product/Electronics" className="cursor-pointer display-flex decoration-none flex-1">Electronic Gadgets</Link></span>
         </div>
         <div className="subscribeInfo">
           <p className="title">Lets Stay in Touch</p>
