@@ -67,6 +67,7 @@ const ProductDetail = (props) => {
         <span className="product-description">
         {description}
         </span>
+        {/*
         <span className="product-size">Size</span>
         <span className="mb-10">
           <span className="mr-10 cursor-pointer">XS</span>
@@ -75,6 +76,7 @@ const ProductDetail = (props) => {
           <span className="mr-10 cursor-pointer">L</span>
           <span className="mr-10 cursor-pointer">XL</span>
         </span>
+        */}
         <span className="product-size">Quantity</span>
         <ProductCounter onChange={(val) => setQty(val)}/>
         <Button onClick={addProductToCart}/>
