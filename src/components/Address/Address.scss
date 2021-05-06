@@ -8,18 +8,4 @@ $root: '.Address';
   border-radius: 5px;
   padding: 10px;
   background: #F4F4F4;
-
-  .custom-radio{
-    appearance: none;
-    background-color: black;
-    border:10px solid white;
-    border-radius: 50%;
-    transition: 0.2s all linear;
-    box-shadow: 0 0 0 1px black;
-
-    &:checked{
-      border: 6px solid white;
-      outline: unset !important
-    }
-  }
 }

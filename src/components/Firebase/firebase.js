@@ -28,16 +28,19 @@ class Firebase {
 
   address = (uid) => this.db.ref(`/address/${uid}`);
 
+  order = (uid) => this.db.ref(`/order/${uid}`);
+
   onAuthChangeListener = (next, fallback) => {
     return this.auth.onAuthStateChanged(authUser => {
       if(authUser){
         Promise.all([
           this.user(authUser.uid).once('value'),
           this.cart(authUser.uid).once('value'),
-          this.address(authUser.uid).once('value')
+          this.address(authUser.uid).once('value'),
+          this.order(authUser.uid).once('value')
         ])
         .then((results)=> {
-          const [ User, Cart, Address ] = results;
+          const [ User, Cart, Address, Order ] = results;
           const dbUser = User.val();
           const user = {
             uid: authUser.uid,
@@ -47,7 +50,8 @@ class Firebase {
           }
           const cart = Cart.val();
           const address = Address.val();
-          next(user,cart, address);
+          const order = Order.val();
+          next(user, cart, address, order);
         })
       } else {
         fallback();

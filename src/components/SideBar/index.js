@@ -70,8 +70,8 @@ const SideBar = ({ openDrawer = false, currentState, user}) => {
       <hr style={{width:'calc(100% - 50px)'}}/>
       <div className="sideBarCategories" style={{flexGrow:1}}>
         <span>Personal</span>
-        <span>Past Order</span>
-        <span>Add Address</span>
+        <span><Link to="/past-orders" className="cursor-pointer display-flex decoration-none flex-1">Past Order</Link></span>
+        <span><Link to="/add-address" className="cursor-pointer display-flex decoration-none flex-1">Add Address</Link></span>
       </div>
       <div className="sideBarLogout" onClick={handleGoogleSignIn}>
         {

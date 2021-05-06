@@ -6,3 +6,4 @@ export const ADD_ADDRESS = "ADD_ADDRESS";
 export const REMOVE_ADDRESS = "REMOVE_ADDRESS";
 export const CLEAR_ADDRESS = "CLEAR_ADDRESS";
 export const ADD_STATE = "ADD_STATE";
+export const PLACE_ORDER = "PLACE_ORDER";

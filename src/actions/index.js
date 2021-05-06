@@ -37,3 +37,8 @@ export const addAddressState = (payload) => ({
   type: ACTIONS.ADD_STATE,
   payload
 })
+
+export const placeOrder = (order) => ({
+  type: ACTIONS.PLACE_ORDER,
+  order
+})

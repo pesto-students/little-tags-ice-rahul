@@ -16,7 +16,7 @@ const withAuthentication = (Component) => {
       props.setAuthUser(null);
     }
 
-    const next = (authUser, cart, address) => {
+    const next = (authUser, cart, address, order) => {
       saveToLocalStorage(authUser);
       props.setAuthUser(authUser);
       props.clearCart();
@@ -32,6 +32,7 @@ const withAuthentication = (Component) => {
           props.addAddress(val)
         })
       }
+      console.log(order, "order")
     }
 
     useEffect(()=>{

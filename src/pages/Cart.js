@@ -25,6 +25,14 @@ const Cart = (props) => {
     props.removeFromCart(val)
     setUpdateDatabase(true);
   }
+  const getTotal = () => {
+      let total = 0;
+      props.cart.forEach(element => {
+        total += Math.round(parseFloat(element.price)*100) / 100 * parseFloat(element.qty)
+        console.log(element.price)
+      });
+      return total
+  }
   useEffect(()=>{
     if(updateDatabase){
       firebase.cart(props.authUser.uid).set({
@@ -55,6 +63,10 @@ const Cart = (props) => {
                   </Product>
         })
       }
+      <div className="display-flex justify-flex-end w-70 padding-10 gap-10 font-1-25 align-flex-end">
+        <span>Total:</span>
+        <span>{CURRENCY.IND} {getTotal()}</span>
+      </div>
       <Button withIcon={false} text="Proceed to Checkout" onClick={() => history.push('/delivery') }/>
     </section>
     </>

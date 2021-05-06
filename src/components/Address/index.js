@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react'
+import { ReactComponent as Cancel } from '../../global/assets/icons/icon-cancel.svg';
 import './Address.scss'
 
 const Address = ({
@@ -7,7 +8,9 @@ const Address = ({
     address = '1418 Riverwood Drive, <br/>Suite 3245 Cottonwood, <br/>DL 110092, India', 
     phone = '+91 9691078419',
     className,
-    withRadio = true
+    withRadio = true,
+    cancallable = false,
+    onCancel
   }) => {
     
   const displayAddress = useRef(null)
@@ -32,6 +35,9 @@ const Address = ({
         <span className="margin-5" ref={displayAddress}></span>
         <span className="margin-left-5" ref={displayPhone}></span>
       </span>
+      {
+        cancallable ? <Cancel width="24" height="24" fill="red" className="cursor-pointer" onClick={()=> onCancel ? onCancel(id) : '' } /> : ''
+      }
     </div>
   )
 }

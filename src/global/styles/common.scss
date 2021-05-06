@@ -47,6 +47,22 @@ body {
   padding: 0;
 }
 
+.padding-10{
+  padding: 10px;
+}
+
+.margin-0{
+  margin: 0;
+}
+
+.width-30-p{
+  width: 30%;
+}
+
+.list-none{
+  list-style: none;
+}
+
 .product-list{
   padding: 15px;
   display: flex;
@@ -60,6 +76,14 @@ body {
 
 .align-flex-start{
   align-items: flex-start;
+}
+
+.align-flex-end{
+  align-items: flex-end;
+}
+
+.justify-flex-end{
+  justify-content: flex-end;
 }
 
 .width-20{
@@ -117,6 +141,10 @@ body {
   gap:20px;
 }
 
+.gap-10{
+  gap:10px;
+}
+
 .flex-column{
   flex-direction: column;
 }
@@ -140,6 +168,20 @@ body {
 .decoration-none{
   text-decoration: none;
   color: inherit;
+}
+
+.custom-radio{
+  appearance: none;
+  background-color: black;
+  border:10px solid white;
+  border-radius: 50%;
+  transition: 0.2s all linear;
+  box-shadow: 0 0 0 1px black;
+
+  &:checked{
+    border: 6px solid white;
+    outline: unset !important
+  }
 }
 
 .title-center{

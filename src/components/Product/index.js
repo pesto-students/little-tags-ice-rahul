@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 import { IMAGE_CONTAINER } from '../../constants';
 import './Product.scss';
 
-const Product = ({image, id = 1, title = "Product Name", price = "₹ 1200.00" , className, linkable = true, children}) => {
+const Product = ({image, id = 1, title = "Product Name", price = "1200.00" , className, linkable = true, children}) => {
+
+  price = `${price.split(" ")[0]} ${Math.round(parseFloat(price.split(" ")[1])*100)/100}`;
 
   const ProductRow = () => {
     return (
