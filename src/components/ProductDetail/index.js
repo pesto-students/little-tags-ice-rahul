@@ -44,7 +44,7 @@ const ProductDetail = (props) => {
       history.push('/cart');
       setMsg('Cart Updated Successfully')
     }
-  },[firebase, props.authUser.uid, props.cartItem, isUpdate, history])
+  },[firebase, props.authUser?.uid, props.cartItem, isUpdate, history])
 
   return (
     <section className="ProductDetail flex-column-small">
