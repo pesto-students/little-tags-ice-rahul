@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import Button from '../Button';
 import { CURRENCY } from '../../constants/index';
 import { connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { addToCart } from '../../actions';
 import FirebaseContext from '../Firebase/context';
 import ProductCounter from '../ProductCounter';
@@ -12,6 +13,7 @@ const ProductDetail = (props) => {
   variant and stock are future variable to be used to sync with inventory
   const { price, name, description, variant, stock, image} = product;
 */
+  const history = useHistory();
   const [qty, setQty] = useState(1);
   const { price, name, description, image} = props.product;
   const firebase = useContext(FirebaseContext);
@@ -39,9 +41,10 @@ const ProductDetail = (props) => {
         roles:{}
       })
       setIsUpdate(false);
+      history.push('/cart');
       setMsg('Cart Updated Successfully')
     }
-  },[firebase, props.authUser?.uid, props.cartItem, isUpdate])
+  },[firebase, props.authUser.uid, props.cartItem, isUpdate, history])
 
   return (
     <section className="ProductDetail flex-column-small">
