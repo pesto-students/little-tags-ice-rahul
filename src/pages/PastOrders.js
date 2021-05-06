@@ -4,7 +4,6 @@ import Product from '../components/Product'
 import { CURRENCY } from '../constants'
 
 const PastOrders = (props) => {
-  console.log(props.order,"order")
   return (
     <>
       <section className="product-list">
